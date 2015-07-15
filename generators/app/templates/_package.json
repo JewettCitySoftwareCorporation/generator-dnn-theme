@@ -1,0 +1,17 @@
+{
+  "name": "<%=themeName %>",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-header": "*",
+    "gulp-stylus": "*",
+    "gulp-typescript": "*",
+    "gulp-uglify": "*",
+    "jade": "*",
+    "stylus": "*",
+    "ride-css": "^1.0.2"
+  },
+  "private": true
+}
