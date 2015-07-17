@@ -49,10 +49,6 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath(_s.dasherize(this.props.themeName) +'.ascx')
       );
       this.fs.copy(
-        this.templatePath('images'),
-        this.destinationPath('images')
-      );
-      this.fs.copy(
         this.templatePath('js'),
         this.destinationPath('js')
       );
