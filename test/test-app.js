@@ -21,12 +21,12 @@ describe('dnn theme:app', function () {
       'package.json',
       '.editorconfig',
       '.jshintrc',
-      'js/theme.js',
-      'nav-primary/nav-primary.cshtml',
-      'nav-primary/nav-primary-menudef.xml',
-      'theme/style.styl',
-      'test-theme.ascx',
-      'test-theme.doctype.xml'
+      'static/js/theme.js',
+      'static/nav-primary/nav-primary.cshtml',
+      'static/nav-primary/nav-primary-menudef.xml',
+      'static/test-theme.ascx',
+      'static/test-theme.doctype.xml',
+      'stylus/style.styl'
     ]);
   });
 });

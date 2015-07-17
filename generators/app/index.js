@@ -10,7 +10,7 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the prime ' + chalk.bold.red('Dnn ') + chalk.bold.blue('theme') + ' generator!'
+      'Welcome to the ' + chalk.bold.red('Dnn ') + chalk.bold.blue('theme') + ' generator!'
     ));
 
     var prompts = [{
@@ -45,26 +45,37 @@ module.exports = yeoman.generators.Base.extend({
         config
       );
       this.fs.copyTpl(
-        this.templatePath('theme/style.styl'),
-        this.destinationPath('theme/style.styl'),
+        this.templatePath('stylus/style.styl'),
+        this.destinationPath('stylus/style.styl'),
         config
       );
       this.fs.copy(
-        this.templatePath('_skin.ascx'),
-        this.destinationPath(_s.dasherize(this.props.themeName) +'.ascx')
+        this.templatePath('static/_skin.ascx'),
+        this.destinationPath('static/'+ _s.dasherize(this.props.themeName) +'.ascx')
       );
       this.fs.copy(
-        this.templatePath('_skin.doctype.xml'),
-        this.destinationPath(_s.dasherize(this.props.themeName) +'.doctype.xml')
+        this.templatePath('static/_skin.doctype.xml'),
+        this.destinationPath('static/'+ _s.dasherize(this.props.themeName) +'.doctype.xml')
       );
       this.fs.copy(
-        this.templatePath('js'),
-        this.destinationPath('js')
+        this.templatePath('static/js'),
+        this.destinationPath('static/js')
       );
       this.fs.copy(
-        this.templatePath('nav-primary'),
-        this.destinationPath('nav-primary')
+        this.templatePath('static/nav-primary'),
+        this.destinationPath('static/nav-primary')
       );
+    },
+
+    buildSystem: function () {
+      this.fs.copy(
+        this.templatePath('sys-build'),
+        this.destinationPath('sys-build')
+      );
+      this.fs.copy(
+        this.templatePath('gulpfile.js'),
+        this.destinationPath('gulpfile.js')
+      )
     },
 
     projectfiles: function () {
