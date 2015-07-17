@@ -1,0 +1,44 @@
+@using System;
+@using System.Dynamic;
+@using DotNetNuke.Web.DDRMenu;
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+@{
+  var root = Model.Source.root;
+}
+
+@helper css(MenuNode node) {
+  var cssClasses = new List<string>();
+
+  if (node.Breadcrumb) {
+    cssClasses.Add("current");
+  }
+
+  cssClasses.Add("item");
+
+  var classString = new HtmlString((cssClasses.Count == 0) ? "" : (" class=\"" + String.Join(" ", cssClasses.ToArray()) + "\""));
+
+  @classString
+}
+
+@helper RenderNodes(IList<MenuNode> nodes) {
+  if (nodes.Count > 0) {
+    foreach (var node in nodes) {
+      if (node.Children.Count < 1) {
+        <li @css(node)>
+          <a href="@node.Url" target="@node.Target">@node.Text</a>
+        </li>
+      } else {
+        <li @css(node)>
+          <a href="@node.Url" target="@node.Target">@node.Text</a>
+          <ul class="children">
+            <li class="show-mobile"><a href="@node.Url" target="@node.Target">@node.Text</a></li>
+            @RenderNodes(node.Children)
+          </ul>
+        </li>
+      }
+    }
+  }
+}
+<nav class="<%=menuName %>">
+  <ul>@RenderNodes(root.Children)</ul>
+</nav>

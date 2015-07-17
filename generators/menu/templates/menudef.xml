@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+    <template><%=menuName %>.cshtml</template>
+    <defaultClientOptions>
+        <clientOption name="MenuStyle" type="string" value="<%=menuName %>" />
+    </defaultClientOptions>
+</manifest>
