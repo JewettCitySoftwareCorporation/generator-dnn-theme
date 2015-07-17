@@ -44,9 +44,18 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('bower.json'),
         config
       );
+      this.fs.copyTpl(
+        this.templatePath('theme/style.styl'),
+        this.destinationPath('theme/style.styl'),
+        config
+      );
       this.fs.copy(
         this.templatePath('_skin.ascx'),
         this.destinationPath(_s.dasherize(this.props.themeName) +'.ascx')
+      );
+      this.fs.copy(
+        this.templatePath('_skin.doctype.xml'),
+        this.destinationPath(_s.dasherize(this.props.themeName) +'.doctype.xml')
       );
       this.fs.copy(
         this.templatePath('js'),
