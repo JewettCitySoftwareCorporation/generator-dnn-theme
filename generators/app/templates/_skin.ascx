@@ -18,6 +18,7 @@
 <%@ Register TagPrefix="dnn" TagName="controlpanel" Src="~/Admin/Skins/controlpanel.ascx" %>
 <%@ Register TagPrefix="dnn" TagName="Meta" Src="~/Admin/Skins/Meta.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
+
 <dnn:meta Name="viewport" Content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" runat="server"></dnn:meta>
 
 <div class="navbar">
