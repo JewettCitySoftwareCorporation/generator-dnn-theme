@@ -4,15 +4,16 @@
   "dependencies": {},
   "devDependencies": {
     "chalk": "^1.0.0",
-    "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-header": "*",
     "gulp-stylus": "*",
     "gulp-typescript": "*",
     "gulp-uglify": "*",
+    "gulp-zip": "^3.0.2",
+    "gulp": "*",
     "jade": "*",
-    "stylus": "*",
-    "ride-css": "^1.0.2"
+    "ride-css": "^1.0.2",
+    "stylus": "*"
   },
   "private": true
 }

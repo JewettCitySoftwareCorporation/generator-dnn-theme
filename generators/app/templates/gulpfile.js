@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var fs = require('fs');
 var path = require('path');
@@ -13,9 +15,10 @@ buildSystems.forEach(function (buildSystem) {
     // getting the module
     var buildModule = require(path.join(buildersPath, buildSystem));
     // pushing task name to the default task
-    if (!buildModule.priority) buildSystemsIndex.push(buildModule.name);
-
-    if (buildModule.priority && buildModule.priority === 'last') buildSystemsIndexLast.push(buildModule.name);
+    if (!buildModule.exclude) {
+      if (!buildModule.priority) buildSystemsIndex.push(buildModule.name);
+      if (buildModule.priority && buildModule.priority === 'last') buildSystemsIndexLast.push(buildModule.name);
+    }
 
     // registering the task
     gulp.task(buildModule.name, buildModule.build({
