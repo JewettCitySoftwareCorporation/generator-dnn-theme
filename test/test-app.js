@@ -66,6 +66,21 @@ describe('dnn theme:skin', function () {
   });
 });
 
+describe('dnn theme:task less css', function () {
+  before(function (done) {
+    helpers.run(path.join(__dirname, '../generators/task-less'))
+      .withOptions({ skipInstall: true })
+      .on('end', done);
+  });
+
+  it('creates files', function () {
+    assert.file([
+      'less/skin.less',
+      'tasks/less.js'
+    ]);
+  });
+});
+
 describe('dnn theme:task stylus', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/task-stylus'))

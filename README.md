@@ -38,6 +38,18 @@ yo dnn-theme:menu
 yo dnn-theme:skin
 ```
 
+###### task-less
+
+```bash
+yo dnn-theme:task-less
+```
+
+###### task-stylus
+
+```bash
+yo dnn-theme:task-stylus
+```
+
 ## License
 
 MIT
