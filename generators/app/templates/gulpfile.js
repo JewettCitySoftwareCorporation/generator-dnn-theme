@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var fs = require('fs');
 var path = require('path');
 
-var buildersPath = path.join(__dirname, './sys-build');
+var buildersPath = path.join(__dirname, './tasks');
 var buildSystems = fs.readdirSync(buildersPath);
 var buildSystemsIndex = [];
 
@@ -22,6 +22,7 @@ buildSystems.forEach(function (buildSystem) {
   }
 });
 
+// registering the default task
 gulp.task('default', buildSystemsIndex, function () {
-  // i do nothing lololol
+  console.log(buildSystemsIndex.length +' Task(s) executed: '+ buildSystemsIndex.join());
 });

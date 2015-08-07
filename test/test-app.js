@@ -25,8 +25,7 @@ describe('dnn theme:app', function () {
       'static/nav-primary/nav-primary.cshtml',
       'static/nav-primary/nav-primary-menudef.xml',
       'static/test-theme.ascx',
-      'static/test-theme.doctype.xml',
-      'stylus/style.styl'
+      'static/test-theme.doctype.xml'
     ]);
   });
 });
@@ -63,6 +62,21 @@ describe('dnn theme:skin', function () {
     assert.file([
       'my-wonderful-skin.ascx',
       'my-wonderful-skin.doctype.xml'
+    ]);
+  });
+});
+
+describe('dnn theme:task stylus', function () {
+  before(function (done) {
+    helpers.run(path.join(__dirname, '../generators/task-stylus'))
+      .withOptions({ skipInstall: true })
+      .on('end', done);
+  });
+
+  it('creates files', function () {
+    assert.file([
+      'stylus/skin.styl',
+      'tasks/stylus.js'
     ]);
   });
 });

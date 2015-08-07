@@ -44,11 +44,6 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('bower.json'),
         config
       );
-      this.fs.copyTpl(
-        this.templatePath('stylus/style.styl'),
-        this.destinationPath('stylus/style.styl'),
-        config
-      );
       this.fs.copy(
         this.templatePath('static/_skin.ascx'),
         this.destinationPath('static/'+ _s.dasherize(this.props.themeName) +'.ascx')
@@ -69,8 +64,8 @@ module.exports = yeoman.generators.Base.extend({
 
     buildSystem: function () {
       this.fs.copy(
-        this.templatePath('sys-build'),
-        this.destinationPath('sys-build')
+        this.templatePath('tasks'),
+        this.destinationPath('tasks')
       );
       this.fs.copy(
         this.templatePath('gulpfile.js'),
