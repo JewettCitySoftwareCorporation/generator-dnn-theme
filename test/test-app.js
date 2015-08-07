@@ -25,7 +25,9 @@ describe('dnn theme:app', function () {
       'static/nav-primary/nav-primary.cshtml',
       'static/nav-primary/nav-primary-menudef.xml',
       'static/test-theme.ascx',
-      'static/test-theme.doctype.xml'
+      'static/test-theme.doctype.xml',
+      'tasks/autoprefixer.js',
+      'tasks/zip.js'
     ]);
   });
 });
