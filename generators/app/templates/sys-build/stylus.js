@@ -1,27 +1,29 @@
-var autoprefixer = require('gulp-autoprefixer');
-var gulp = require('gulp');
-var stylus = require('gulp-stylus');
-var rideCss = require('ride-css');
+module.exports.name = 'stylus';
 
-var autoprefixerOptions = {
-  browsers: [
-    'safari > 5',
-    'firefox > 20'
-  ]
-};
+module.exports.build = function (config) {
+  var autoprefixer = require('gulp-autoprefixer');
+  var gulp = require('gulp');
+  var stylus = require('gulp-stylus');
+  var rideCss = require('ride-css');
 
-var stylusOptions = {
-  use: [rideCss()]
-};
+  var autoprefixerOptions = {
+    browsers: [
+      'safari > 5',
+      'firefox > 20'
+    ]
+  };
 
-module.exports = function () {
-  return gulp.task('theme:stylus', function () {
+  var stylusOptions = {
+    use: [rideCss()]
+  };
+
+  return function () {
     gulp.src([
       'stylus/**.styl',
       '!stylus/_**.styl'
     ])
     .pipe(stylus(stylusOptions))
     .pipe(autoprefixer(autoprefixerOptions))
-    .pipe(gulp.dest('dist'));
-  });
+    .pipe(gulp.dest(config.__dirname));
+  };
 }
