@@ -6,7 +6,7 @@ module.exports.build = function (config) {
 
   return function () {
     gulp.src([
-      'less/**.less'
+      'less/**.less',
       '!less/_**.less'
     ])
     .pipe(less())
