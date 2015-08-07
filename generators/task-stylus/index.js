@@ -12,7 +12,7 @@ module.exports = yeoman.generators.Base.extend({
     this.log(yosay(
       'Adding a stylus task to your ' + chalk.bold.red('Dnn ') + chalk.bold.blue('theme') + '!'
     ));
-    done()
+    done();
   },
 
   writing: {
