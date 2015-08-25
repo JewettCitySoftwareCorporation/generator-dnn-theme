@@ -1,0 +1,138 @@
+block vars
+
+mixin dnn-error-logging(mixinName, object)
+  if (!object || Object.prototype.toString.call(object) != '[object Object]')
+    -console.error(mixinName + ': requires a plain object (like a json) to work')
+    -return
+  if (object.id == undefined)
+    -console.error(mixinName + ': requires a key called id. E.g. {id: "mySomething"}')
+    -return
+  if (object.id.length == 0)
+    -console.error(mixinName + ': the id must be a string long at least one char')
+    -return
+
+mixin content-pane(className)
+  #contentPane(runat='server', class!=className)
+
+mixin container-icon
+  dnn:icon#icon(runat='server')
+
+mixin container-title
+  dnn:title#title(runat='server')
+
+mixin copyright(object)
+  +dnn-error-logging('copyright', object)
+  dnn:copyright(id=object.id, CssClass!=object.className, runat='server')
+
+mixin dnn-css(filename, priority, skinPath)
+  if (!skinPath && skinPath != false)
+    -var skinPath = 'SkinPath'
+  dnn:DnnCssInclude(runat="server", FilePath!=filename, PathNameAlias!=skinPath, Priority!=priority)
+
+mixin dnn-js(filename, priority, skinPath)
+  if (!skinPath && skinPath != false)
+    -var skinPath = 'SkinPath'
+  dnn:DnnJsInclude(runat="server", FilePath!=filename, PathNameAlias!=skinPath, Priority!=priority)
+
+mixin is-logged
+  !='\n<% if (Request.IsAuthenticated) { %>'
+  block
+  !='\n<% } %>'
+
+mixin language(object)
+  +dnn-error-logging('language', object)
+  if (!object.links)
+    -object.links = false
+  if (!object.menu)
+    -object.menu = false
+  dnn:language(
+    AlternateTemplate!=object.alternateItem,
+    CommonFooterTemplate!=object.commonFooter,
+    CommonHeaderTemplate!=object.commonHeader,
+    FooterTemplate!=object.footer,
+    HeaderTemplate!=object.header,
+    ItemTemplate!=object.item,
+    CssClass!=object.css,
+    id=object.id,
+    SelectedItemTemplate!=object.current,
+    SeparatorTemplate!=object.separator,
+    ShowLinks!=(object.links) ? 'True' : 'False',
+    ShowMenu!=(object.menu) ? 'True' : 'False',
+    runat='server'
+    )
+
+mixin login(object)
+  +dnn-error-logging('login', object)
+  if (!object.css)
+    -var className = 'site-login'
+  dnn:login(id=object.id, CssClass!=object.css, runat='server', LogoffText!=object.logout, Text!=object.login)
+
+mixin logo(object)
+  +dnn-error-logging('logo', object)
+  if (!object.css)
+    -object.css = 'site-logo'
+  dnn:logo(id=object.id, CssClass!=object.css, runat='server')
+
+mixin menu(object)
+  +dnn-error-logging('menu', object)
+  if (!object.style)
+    -console.error('I need to know the menu style (it\'s the name of the folder es: style: "menu-top")')
+    -return
+  if (object.style.length == 0)
+    -console.error('menu.style must be a string and it must be at least one char long')
+    -return
+  dnn:menu(id=object.id, menuStyle=object.style, runat='server', ExcludeNodes!=object.exclude, IncludeNodes!=object.include)
+
+mixin not-logged
+  !='\n<% if (!Request.IsAuthenticated) { %>'
+  block
+  !='\n}'
+
+mixin pane(id, className)
+  if (!id)
+    -console.error('I need an id')
+    -return 
+  if (id.lengh == '')
+    -console.error('Pane\'s id must be a string')
+    -return
+  if (/^[0-9]|[-]{1,}/g.test(id.replace(/\s+/, '')))
+    -console.error('l\'id not valid. It will breaking badly.')
+    -return
+  div(id=id, class!=className, runat='server')
+
+mixin page-name
+  !='<%=PortalSettings.ActiveTab.Name %>'
+
+mixin page-title
+  !='<%=PortalSettings.ActiveTab.Title %>'
+
+mixin parent-page-name
+  !='<%=PortalSettings.ActiveTab.BreadCrumbs(PortalSettings.ActiveTab.Level - 1).TabName %>'
+
+mixin portal-folder
+  !='<%=PortalSettings.HomeDirectory %>'
+
+mixin privacy(object)
+  +dnn-error-logging('privacy', object)
+  dnn:privacy(id=object.id, CssClass!=object.className, Text=object.text, runat='server')
+
+mixin registration(object)
+  +dnn-error-logging('registration', object)
+  dnn:user(id=object.id, CssClass!=object.css, runat='server')
+
+mixin search(object)
+  +dnn-error-logging('search', object)
+  dnn:search(id!=object.id, CssClass!=object.className, ShowSite!=object.site.toString(), ShowWeb!=object.web.toString(), SiteIconURL!=(object.icon||object.iconWeb), SiteText!=object.siteText, Submit!=object.submit, UseDropDownList!=object.dropDown, WebIconURL!=object.iconUrl, runat!='server')
+
+mixin skinPath
+  !='<%=skinPath %>'
+
+mixin tabid
+  !='<%=PortalSettings.ActiveTab.TabID %>'
+
+mixin terms(object)
+  +dnn-error-logging('terms', object)
+  dnn:terms(id!=object.id, CssClass!=object.className, runat='server')
+
+mixin viewport()
+  dnn:meta(Name='viewport', Content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', runat='server')

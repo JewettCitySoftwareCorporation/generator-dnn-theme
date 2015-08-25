@@ -10,7 +10,7 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Adding a stylus task to your ' + chalk.bold.red('Dnn ') + chalk.bold.blue('theme') + '!'
+      'Adding a jade task to your ' + chalk.bold.red('Dnn ') + chalk.bold.blue('theme') + '!'
     ));
     done();
   },
@@ -18,8 +18,8 @@ module.exports = yeoman.generators.Base.extend({
   writing: {
     tasks: function () {
       this.fs.copy(
-        this.templatePath('stylus'),
-        this.destinationPath('stylus')
+        this.templatePath('jade'),
+        this.destinationPath('jade')
       );
       this.fs.copy(
         this.templatePath('tasks'),
@@ -29,9 +29,8 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function (done) {
-    this.npmInstall([
-      'gulp-stylus',
-      'ride-css'
-    ]);
+    this.npmInstall(['gulp-jade', 'gulp-rename'], {
+      saveDev: true
+    });
   }
 });

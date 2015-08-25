@@ -68,6 +68,21 @@ describe('dnn theme:skin', function () {
   });
 });
 
+describe('dnn theme:task jade', function () {
+  before(function (done) {
+    helpers.run(path.join(__dirname, '../generators/task-jade'))
+      .withOptions({ skipInstall: true })
+      .on('end', done);
+  });
+
+  it('creates files', function () {
+    assert.file([
+      'jade/skin.jade',
+      'tasks/jade.js'
+    ]);
+  });
+});
+
 describe('dnn theme:task less css', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/task-less'))

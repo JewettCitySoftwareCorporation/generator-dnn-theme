@@ -30,7 +30,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function (done) {
-    this.npmInstall('gulp-less', {
+    this.npmInstall(['gulp-less'], {
       saveDev: true
     });
   }
