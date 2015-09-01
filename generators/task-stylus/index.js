@@ -29,6 +29,9 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function (done) {
+    this.bowerInstall(['nostrap'], {
+      saveDev: true
+    });
     this.npmInstall([
       'gulp-stylus',
       'ride-css'
