@@ -34,6 +34,7 @@ module.exports = yeoman.generators.Base.extend({
       var config = {
         themeName: this.props.themeName
       };
+      this.config.set(config);
       this.fs.copyTpl(
         this.templatePath('_package.json'),
         this.destinationPath('package.json'),
