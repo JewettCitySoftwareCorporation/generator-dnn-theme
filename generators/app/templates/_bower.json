@@ -2,8 +2,7 @@
   "name": "<%=themeName %>",
   "version": "0.0.0",
   "dependencies": {
-    "font-awesome": "",
-    "nostrap": ""
+    "font-awesome": ""
   },
   "private": true
 }
