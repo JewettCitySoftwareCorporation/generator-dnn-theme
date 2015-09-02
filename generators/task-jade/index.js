@@ -17,6 +17,7 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     tasks: function () {
+      this.config.set('jade', true);
       this.fs.copy(
         this.templatePath('jade'),
         this.destinationPath('jade')

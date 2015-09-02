@@ -1,4 +1,10 @@
 extends /jade/templates/skin
 
 block skin
-  
+  .navbar
+    +logo('site_logo')
+    +menu({id: 'primary', style: 'nav-primary'})
+  section
+    +content-pane('pane')
+  footer
+    +privacy('privacy')
