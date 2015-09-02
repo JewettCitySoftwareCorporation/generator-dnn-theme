@@ -1,4 +1,4 @@
-module.exports.name = 'stylus';
+module.exports.name = 'jade';
 
 module.exports.build = function (config) {
   var gulp = require('gulp');
@@ -9,10 +9,6 @@ module.exports.build = function (config) {
     options: {
       basedir: config.__dirname
     }
-  };
-
-  var stylusOptions = {
-    use: [rideCss()]
   };
 
   return function () {
