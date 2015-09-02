@@ -30,6 +30,10 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function (done) {
+    // ugh
+    this.bowerInstall(['bootstrap'], {
+      saveDev: true
+    });
     this.npmInstall(['gulp-less'], {
       saveDev: true
     });
