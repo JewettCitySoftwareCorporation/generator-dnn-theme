@@ -17,9 +17,13 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     tasks: function () {
-      this.fs.copy(
+      var config = {
+        themeName: this.config.get('themeName')
+      };
+      this.fs.copyTpl(
         this.templatePath('stylus'),
-        this.destinationPath('stylus')
+        this.destinationPath('stylus'),
+        config
       );
       this.fs.copy(
         this.templatePath('tasks'),
