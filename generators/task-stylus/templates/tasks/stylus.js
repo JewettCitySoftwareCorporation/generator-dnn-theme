@@ -24,6 +24,6 @@ module.exports.build = function (config) {
     ])
     .pipe(stylus(stylusOptions))
     .pipe(autoprefixer(autoprefixerOptions))
-    .pipe(gulp.dest(config.__dirname));
+    .pipe(gulp.dest(config.dist));
   };
 }

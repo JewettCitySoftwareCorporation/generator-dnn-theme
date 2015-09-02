@@ -45,20 +45,20 @@ module.exports = yeoman.generators.Base.extend({
         config
       );
       this.fs.copy(
-        this.templatePath('static/_skin.ascx'),
-        this.destinationPath('static/'+ _s.dasherize(this.props.themeName) +'.ascx')
+        this.templatePath('dist/_skin.ascx'),
+        this.destinationPath('dist/'+ _s.dasherize(this.props.themeName) +'.ascx')
       );
       this.fs.copy(
-        this.templatePath('static/_skin.doctype.xml'),
-        this.destinationPath('static/'+ _s.dasherize(this.props.themeName) +'.doctype.xml')
+        this.templatePath('dist/_skin.doctype.xml'),
+        this.destinationPath('dist/'+ _s.dasherize(this.props.themeName) +'.doctype.xml')
       );
       this.fs.copy(
-        this.templatePath('static/js'),
-        this.destinationPath('static/js')
+        this.templatePath('dist/js'),
+        this.destinationPath('dist/js')
       );
       this.fs.copy(
-        this.templatePath('static/nav-primary'),
-        this.destinationPath('static/nav-primary')
+        this.templatePath('dist/nav-primary'),
+        this.destinationPath('dist/nav-primary')
       );
     },
 

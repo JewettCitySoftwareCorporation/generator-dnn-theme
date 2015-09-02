@@ -31,7 +31,7 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     menu: function () {
-      var menuFolder = this.props.menuName +'/';
+      var menuFolder = 'dist/'+ this.props.menuName +'/';
       var config = {
         menuName: this.props.menuName
       };

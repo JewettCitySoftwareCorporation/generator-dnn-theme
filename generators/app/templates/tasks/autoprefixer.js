@@ -18,6 +18,6 @@ module.exports.build = function (config) {
       config.__dirname +'/**.css'
     ])
     .pipe(autoprefixer(autoprefixerOptions))
-    .pipe(gulp.dest(config.__dirname));
+    .pipe(gulp.dest(config.dist));
   };
 }

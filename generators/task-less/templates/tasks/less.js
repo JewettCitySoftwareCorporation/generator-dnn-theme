@@ -10,6 +10,6 @@ module.exports.build = function (config) {
       '!less/_**.less'
     ])
     .pipe(less())
-    .pipe(gulp.dest(config.__dirname));
+    .pipe(gulp.dest(config.dist));
   }
 }

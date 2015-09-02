@@ -21,11 +21,11 @@ describe('dnn theme:app', function () {
       'package.json',
       '.editorconfig',
       '.jshintrc',
-      'static/js/theme.js',
-      'static/nav-primary/nav-primary.cshtml',
-      'static/nav-primary/nav-primary-menudef.xml',
-      'static/test-theme.ascx',
-      'static/test-theme.doctype.xml',
+      'dist/js/theme.js',
+      'dist/nav-primary/nav-primary.cshtml',
+      'dist/nav-primary/nav-primary-menudef.xml',
+      'dist/test-theme.ascx',
+      'dist/test-theme.doctype.xml',
       'tasks/autoprefixer.js',
       'tasks/zip.js'
     ]);
@@ -44,8 +44,8 @@ describe('dnn theme:menu', function () {
 
   it('creates files', function () {
     assert.file([
-      'my-wonderful-menu/my-wonderful-menu.cshtml',
-      'my-wonderful-menu/my-wonderful-menu-menudef.xml'
+      'dist/my-wonderful-menu/my-wonderful-menu.cshtml',
+      'dist/my-wonderful-menu/my-wonderful-menu-menudef.xml'
     ]);
   });
 });
@@ -62,8 +62,8 @@ describe('dnn theme:skin', function () {
 
   it('creates files', function () {
     assert.file([
-      'my-wonderful-skin.ascx',
-      'my-wonderful-skin.doctype.xml'
+      'dist/my-wonderful-skin.ascx',
+      'dist/my-wonderful-skin.doctype.xml'
     ]);
   });
 });

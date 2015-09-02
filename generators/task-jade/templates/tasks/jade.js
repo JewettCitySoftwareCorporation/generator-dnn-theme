@@ -21,6 +21,6 @@ module.exports.build = function (config) {
     .pipe(rename({
       ext: 'ascx'
     }))
-    .pipe(gulp.dest(config.__dirname));
+    .pipe(gulp.dest(config.dist));
   };
 }

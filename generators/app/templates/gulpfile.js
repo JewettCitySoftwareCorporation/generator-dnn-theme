@@ -9,6 +9,8 @@ var buildSystems = fs.readdirSync(buildersPath);
 var buildSystemsIndex = [];
 var buildSystemsIndexLast = [];
 
+var distFolder = path.join(__dirname, './dist/');
+
 buildSystems.forEach(function (buildSystem) {
   var modulePath = path.join(buildersPath, buildSystem);
   try {
@@ -22,7 +24,8 @@ buildSystems.forEach(function (buildSystem) {
 
     // registering the task
     gulp.task(buildModule.name, buildModule.build({
-      __dirname: __dirname
+      __dirname: __dirname,
+      dist: distFolder
     }));
   } catch (error) {
     throw new Error(error);
