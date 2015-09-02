@@ -16,8 +16,8 @@ module.exports.build = function (config) {
       '!jade/templates/**.jade'
     ])
     .pipe(jade(jadeOptions))
-    .pipe(rename({
-      ext: 'ascx'
+    .pipe(rename(function (path) {
+      path.extname = '.ascx';
     }))
     .pipe(gulp.dest(config.dist));
   };
