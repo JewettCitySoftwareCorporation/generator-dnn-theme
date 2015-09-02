@@ -6,9 +6,7 @@ module.exports.build = function (config) {
   var rename = require('gulp-rename');
 
   var jadeOptions = {
-    options: {
-      basedir: config.__dirname
-    }
+    basedir: config.__dirname
   };
 
   return function () {
