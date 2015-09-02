@@ -5,7 +5,8 @@
   "license": "MIT",
   "main": "app/index.js",
   "repository": {
-    "github": "https://github.com/octod/generator-dnn-theme"
+    "type": "git",
+    "url": "octod/generator-dnn-theme"
   },
   "author": {
     "name": "Paolo Roth",
