@@ -1,0 +1,20 @@
+.ControlContainer *
+  box-sizing: content-box
+
+.ControlContainer *:after
+  @extends .ControlContainer *
+
+.ControlContainer *:before
+  @extends .ControlContainer *
+
+.Normal
+  color: inherit
+  font-size: inherit
+  font-weight: inherit
+  line-height: inherit
+
+.NormalDeleted
+  @extends .Normal
+
+.NormalDisabled
+  @extends .Normal
