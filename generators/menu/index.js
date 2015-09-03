@@ -21,11 +21,11 @@ module.exports = yeoman.generators.Base.extend({
       choices: [
         {
           name: 'Standard multilevel nav',
-          key: 'menu'
+          value: 'menu'
         },
         {
           name: 'Standard single level breadcrumb',
-          key: 'breadcrumb'
+          value: 'breadcrumb'
         }
       ],
       validate: function (answer) {
