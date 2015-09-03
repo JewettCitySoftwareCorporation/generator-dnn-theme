@@ -7,7 +7,7 @@ module.exports.build = function (config) {
   var path = require('path');
   var zip = require('gulp-zip');
 
-  var destinationFolder = path.join(config.__dirname, 'dist');
+  var destinationFolder = path.join(config.__dirname, 'versions');
   var packageJSON = require(path.join(config.__dirname, 'package.json'));
 
   return function () {
