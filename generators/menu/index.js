@@ -10,10 +10,22 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the prime ' + chalk.bold.red('Dnn ') + chalk.bold.blue('theme') + ' generator!'
+      'Adding a DNN Razor menu to your wonderful '+ chalk.bold.red('Dnn ') + chalk.bold.blue('theme') +'!'
     ));
 
     var prompts = [{
+      type: 'rawList',
+      name: 'menuStyle',
+      message: 'Tell what kind of menu you\'d love to have',
+      choices: [{
+        name: 'Standard multilevel nav',
+        value: 'menu'
+      }, {
+        name: 'Standard single level breadcrumb',
+        value: 'breadcrumb'
+      }],
+      default: 0
+    }, {
       type: 'input',
       name: 'menuName',
       message: 'Tell me how your menu should be called like',
@@ -37,7 +49,7 @@ module.exports = yeoman.generators.Base.extend({
       };
 
       this.fs.copyTpl(
-        this.templatePath('menu.cshtml'),
+        this.templatePath(this.props.menuStyle +'.cshtml'),
         this.destinationPath(menuFolder + config.menuName +'.cshtml'),
         config
       );
@@ -50,6 +62,6 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function () {
-    // this.installDependencies();
+    this.log(chalk.bold.blue('Wundabah!'));
   }
 });

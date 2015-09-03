@@ -37,7 +37,8 @@ describe('dnn theme:menu', function () {
     helpers.run(path.join(__dirname, '../generators/menu'))
       .withOptions({ skipInstall: true })
       .withPrompts({
-        menuName: 'my wonderful menu'
+        menuName: 'my wonderful menu',
+        menuStyle: 'menu'
       })
       .on('end', done);
   });
