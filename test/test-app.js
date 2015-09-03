@@ -38,7 +38,7 @@ describe('dnn theme:menu', function () {
       .withOptions({ skipInstall: true })
       .withPrompts({
         menuName: 'my wonderful menu',
-        menuStyle: 'menu'
+        menuStyle: 0
       })
       .on('end', done);
   });

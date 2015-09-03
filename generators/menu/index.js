@@ -13,17 +13,19 @@ module.exports = yeoman.generators.Base.extend({
       'Adding a DNN Razor menu to your wonderful '+ chalk.bold.red('Dnn ') + chalk.bold.blue('theme') +'!'
     ));
 
+    var MENU_STYLES = [
+      'menu',
+      'breadcrumb'
+    ];
+
     var prompts = [{
-      type: 'rawList',
+      type: 'list',
       name: 'menuStyle',
       message: 'Tell what kind of menu you\'d love to have',
-      choices: [{
-        name: 'Standard multilevel nav',
-        value: 'menu'
-      }, {
-        name: 'Standard single level breadcrumb',
-        value: 'breadcrumb'
-      }],
+      choices: [
+        'Standard multilevel nav',
+        'Standard single level breadcrumb'
+      ],
       default: 0
     }, {
       type: 'input',
@@ -37,6 +39,7 @@ module.exports = yeoman.generators.Base.extend({
     this.prompt(prompts, function (props) {
       this.props = props;
       this.props.menuName = _s.dasherize(props.menuName.toLowerCase());
+      this.props.menuStyle = MENU_STYLES[this.props.menuStyle];
       done();
     }.bind(this));
   },
