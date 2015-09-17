@@ -27,6 +27,7 @@ describe('dnn theme:app', function () {
       'dist/test-theme.ascx',
       'dist/test-theme.doctype.xml',
       'tasks/autoprefixer.js',
+      'tasks/package.js',
       'tasks/zip.js'
     ]);
   });
