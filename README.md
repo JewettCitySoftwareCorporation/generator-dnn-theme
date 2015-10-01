@@ -8,19 +8,25 @@ This is a Yeoman generator and this will help you to scaffold your DNNSoftware t
 
 ### installing yeoman and the generator
 
-Copy and paste the script below in your command line
+First of all, you need to install nodejs
+
+* [installing nodejs](https://nodejs.org/en/download/)
+
+Then, copy and paste the script below in your terminal
 
 ```bash
 npm install -g yo generator-dnn-theme
 ```
 
-Finally, cd to a folder (your theme folder) and initiate the generator:
+Finally, mkdir and cd to a folder (your theme folder) and initiate the generator:
 
 ```bash
 yo dnn-theme
 ```
 
 You will be asked to enter your theme name.
+
+You've done!
 
 ### Available generators
 
