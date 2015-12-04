@@ -30,7 +30,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function (done) {
-    this.npmInstall(['gulp-jade', 'gulp-rename'], {
+    this.npmInstall(['jade', 'gulp-jade', 'gulp-rename'], {
       saveDev: true
     });
   }

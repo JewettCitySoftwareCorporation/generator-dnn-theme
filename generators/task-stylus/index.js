@@ -38,7 +38,10 @@ module.exports = yeoman.generators.Base.extend({
     });
     this.npmInstall([
       'gulp-stylus',
-      'ride-css'
-    ]);
+      'ride-css',
+      'stylus'
+    ], {
+      saveDev: true
+    });
   }
 });

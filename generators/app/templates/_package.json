@@ -4,6 +4,7 @@
   "dependencies": {},
   "devDependencies": {
     "chalk": "^1.0.0",
+    "glob": "*",
     "gulp-autoprefixer": "*",
     "gulp-header": "*",
     "gulp-stylus": "*",
@@ -12,8 +13,6 @@
     "gulp-zip": "^3.0.2",
     "gulp": "*",
     "jade": "*",
-    "ride-css": "^1.0.2",
-    "stylus": "*",
     "xmlbuilder": "^2.6.4"
   },
   "private": true
