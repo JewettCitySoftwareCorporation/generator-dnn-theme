@@ -25,7 +25,8 @@ buildSystems.forEach(function (buildSystem) {
     // registering the task
     gulp.task(buildModule.name, buildModule.build({
       __dirname: __dirname,
-      dist: distFolder
+      dist: distFolder,
+      packageJSON: require('./package.json')
     }));
   } catch (error) {
     throw new Error(error);
