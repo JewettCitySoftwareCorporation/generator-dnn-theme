@@ -72,6 +72,8 @@ This task will add stylus building task and will install nostrap and ride-css
 yo dnn-theme:task-stylus
 ```
 
+Every contribution is really welcome.
+
 ## License
 
 The MIT License (MIT)
