@@ -11,7 +11,7 @@ module.exports.build = function (config) {
   var xmlbuilder = require('xmlbuilder');
   var zip = require('gulp-zip');
 
-  var xmlFileName = path.join(config.__dirname, 'manifest.xml');
+  var xmlFileName = path.join(config.__dirname, 'manifest.dnn');
   var author = config.packageJSON.author;
   var email = config.packageJSON.email;
   var name = config.packageJSON.name;
