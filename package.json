@@ -1,6 +1,6 @@
 {
   "name": "generator-dnn-theme",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "Yeoman generator for DNN themes development",
   "license": "MIT",
   "main": "app/index.js",
