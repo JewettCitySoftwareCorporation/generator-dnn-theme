@@ -1,11 +1,14 @@
-.ControlContainer *
+#ControlBar_ControlPanel
   box-sizing: content-box
 
-.ControlContainer *:after
-  @extends .ControlContainer *
+#ControlBar_ControlPanel *
+  @extends #ControlBar_ControlPanel
 
-.ControlContainer *:before
-  @extends .ControlContainer *
+#ControlBar_ControlPanel *:after
+  @extends #ControlBar_ControlPanel *
+
+#ControlBar_ControlPanel *:before
+  @extends #ControlBar_ControlPanel *
 
 .Normal
   color: inherit
