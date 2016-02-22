@@ -34,10 +34,11 @@ module.exports = yeoman.generators.Base.extend({
       var config = {
         skinName: this.props.skinName
       };
-      var distFolder = 'dist/';
+      var distFolder = !this.config.get('jade') ? 'dist/' : 'jade/';
+      var fileformat = !this.config.get('jade') ? '.ascx' : '.jade';
       this.fs.copy(
-        this.templatePath('_skin.ascx'),
-        this.destinationPath(distFolder + config.skinName +'.ascx')
+        this.templatePath('_skin'+ fileformat),
+        this.destinationPath(distFolder + config.skinName + fileformat)
       );
       this.fs.copy(
         this.templatePath('_doctype.xml'),

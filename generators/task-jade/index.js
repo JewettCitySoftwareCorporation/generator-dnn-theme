@@ -26,6 +26,10 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('tasks'),
         this.destinationPath('tasks')
       );
+      this.fs.copy(
+        this.templatePath('static/_doctype.xml'),
+        this.destinationPath('dist')
+      )
     }
   },
 
@@ -33,5 +37,6 @@ module.exports = yeoman.generators.Base.extend({
     this.npmInstall(['jade', 'gulp-jade', 'gulp-rename'], {
       saveDev: true
     });
+    this.config.set('jade', true);
   }
 });
